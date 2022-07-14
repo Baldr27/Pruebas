@@ -1,0 +1,4 @@
+Nombre Alumno                  Puntos    
+García García, Andrés              18        
+López Hermoso, Juan              26        
+Romero López, Luisa              36        

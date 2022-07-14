@@ -1,5 +1,6 @@
-use lib::*;
+#![allow(non_snake_case)]
 
+use lib::*;
 mod lib;
 
 fn main() {
@@ -7,8 +8,15 @@ fn main() {
 
     let test1 = Test::new(4,12,respuestas.clone(),Test::default().val_correcta,Test::default().val_incorrecta);
     let alu1 = Alumno::new("Juan".to_owned(),3,"CDC ABAAB AA".to_owned());
-    println!("metodo de test: {}",test1.corrige_modelo(3, "CDC ABAAB AA"));
+    let list1 = ListaTest::new("entrada.txt".to_owned(),"salida.txt".to_owned());
     println!("metodo de alumno: {}",alu1.corrige(test1));
-    let sim1 = SimTest::new(Test::new(4,12,respuestas.clone(),Test::default().val_correcta,Test::default().val_incorrecta));
+    let mut sim1 = SimTest::new(Test::new(4,
+                                12,
+                                respuestas.clone(),
+                                Test::default().val_correcta,
+                                Test::default().val_incorrecta));
     sim1.simula(20);
+    sim1.listado();
+
+    list1.generar_simulacion();
 }
